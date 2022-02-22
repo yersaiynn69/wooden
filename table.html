@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Nur-Sultan Wooden Furniture</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link rel="stylesheet" href="table.css">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Hanalei&family=Roboto&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+       <link href="changerr.css" rel="stylesheet" id="theme-link">
+
+</head>
+<body>
+      <button class="btn-toggle"onmousedown="sound.play()">changer</button>
+      <div class="container">
+            <nav>
+                  <input type="checkbox" id="nav" class="hidden">
+                  <label for="nav" class="nav-btn">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                  </label>
+                  <div class="logo">
+                        <a href="index.html" onmousedown="sound.play()">Astana<br />Wooden</a>
+                  </div>
+                  <div class="nav-wrapper">
+                        <ul>
+                              <li><a href="index.html"onmousedown="sound.play()">Home </a></li>
+                              <li><a href="Overview.html"onmousedown="sound.play()">Overview </a></li>
+                       
+                              <li><a href="signup.html"onmousedown="sound.play()">sign up </a></li>
+                        </ul>
+                  </div>
+            </nav>
+      </div>
+      <div class="main">
+            <div class="table" id="category">
+                  <h1>table</h1>
+                  <img src="table.png" alt="furniture" class="imgtable">
+                  <div class="slidecontainer">
+                   <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                   <span class="value">number:</span>
+                   <span id="demo" class="value"></span>
+                   <span class="value">x</span>
+                    <script>
+                       var slider = document.getElementById("myRange");
+                        var output = document.getElementById("demo");
+                        output.innerHTML = slider.value; 
+                        slider.oninput = function() {
+                    output.innerHTML = this.value;
+                        }
+                    </script>
+                    <button class="btn btn-light" type="button" style="background-color: black; color: white; margin-bottom: -450px; margin-left: 120px;" >
+                          buy
+                    </button>
+                  </div>
+                  
+            </div>
+            <div class="table2" id="category">
+                  <h1>about</h1>
+                  <h2 style="font-size: 25px;">Table is place that connects <br> people and helps to spend time <br>around it , it can be conference or even dinner </h2>
+                  <h2 style="font-size: 25px;">It should be very comfortable, morevoer <br>qualitive,<br> so even we ask its quantity, it's not our target</h2>
+            </div>
+      </div>
+      <script type="text/javascript" src="sound.js">
+            const button = document.getElementById("runaway-btn");
+
+const animateMove = (element, prop, pixels) =>
+  anime({
+    targets: element,
+    [prop]: `${pixels}px`,
+    easing: "easeOutCirc"
+  });
+
+["mouseover", "click"].forEach(function (el) {
+  button.addEventListener(el, function (event) {
+    const top = getRandomNumber(window.innerHeight - this.offsetHeight);
+    const left = getRandomNumber(window.innerWidth - this.offsetWidth);
+
+    animateMove(this, "left", left).play();
+    animateMove(this, "top", top).play();
+  });
+});
+
+const getRandomNumber = (num) => {
+  return Math.floor(Math.random() * (num + 1));
+};
+      </script>
+</body>
+</html>
